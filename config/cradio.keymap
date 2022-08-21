@@ -9,94 +9,85 @@
 #include <dt-bindings/zmk/bt.h>
 
 
+#define DEFAULT    0
+#define SYMBOL     1
+#define EXTENDED   2
+#define SYMBOL_ALT 3
+#define FUNCTION   4
+#define SETTINGS   5
+
 &mt {
-  //  flavor = "tap-preferred";
-   // tapping_term_ms = <200>;
+    // flavor = "tap-preferred";
+    // tapping_term_ms = <200>;
 };
 
 / { 
 
     combos {
         compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-        
-         combo_tab {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
-        };
-        
-            combo_ralt {
-            timeout-ms = <50>;
-            key-positions = <17 16>;
-            bindings = <&kp RALT>;
-        };
-        
-                    combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp LALT>;
-        };
-        
-                           combo_lgui {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LGUI>;
-        };
-        
-        
-           combo_rgui {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp RGUI>;
-        };
-        
 
-        
+        combo_settings {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&to SETTINGS>;
+        };
     };
 
-        keymap {
-                compatible = "zmk,keymap";
-                
-       		default_layer {
-		bindings = <
-		&kp Q &kp W &kp E &kp R &kp T 						&kp Y &kp U  &kp I    &kp O   &kp P 
-		&kp A &kp S &kp D &kp F &kp G 			        	        &kp H &kp J &kp K &kp L &kp QUOT
-		&mt LSFT Z &kp X &kp C &kp V &kp B				        &kp N &kp M  &kp CMMA &kp DOT &mt LSFT RET
-          				&mo 1 &kp LCTL  				&kp SPC &mo 2 
-		>;
-		};
+    keymap {
+        compatible = "zmk,keymap";
 
-       		left_layer {
-		bindings = <
-		&kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5		&kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 
-		&kp TAB    &kp LC(S)    &kp DQT      &kp PIPE2     &kp HASH 		&kp MINUS &kp EQL  &kp LBKT &kp RBKT  &kp DEL 
-		&kp ESC    &kp TILDE 	&kp NON_US_BSLH &kp NON_US_HASH  &kp TILDE2 	&kp MINUS &kp GRAVE &kp LBKT &kp RBKT  &kp DEL 
-					    &mo 1  &kp LGUI  					&kp RGUI &mo 2 
-		>;
-		};
-		
-		right_layer {
-		bindings = <
-		&kp BANG  &kp ATSN &kp HASH  &kp DLLR  &kp PRCT    			&kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN 
-		&kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN 			&kp MINUS &kp KP_EQUAL  &kp LBRC  &kp RBRC   &kp BKSP
-		&kp LSFT  &kp KPLS &kp LBKT &kp RBKT   &kp BSLH    			&kp UNDER &kp LEFT &kp DOWN &kp UP  &kp RIGHT
-					  &mo 3 &kp LCTL  				&kp SPC  &mo 2 
-		>;
-		};	
-		
-		tri_layer {
-		bindings = <
-		&kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5 			&trans &trans   &trans   &trans  &trans
-		&kp F1 &kp F2 &kp F3 &kp F4 &kp F5  						&trans &kp PG_UP  &kp K_VOL_UP &kp K_MUTE &trans 
-		&bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp F6 &kp F7   				&trans &kp PG_DN  &kp K_VOL_DN  &trans &trans   
-					 &trans &trans  					&trans &trans 
-		>;
-		};	
-        
-	};
+        default_layer {
+            bindings = <
+            &kp Q       &kp W      &kp F      &kp P       &kp B        &kp J &kp L       &kp I      &kp O      &kp SQT
+            &mt LCTRL A &mt LALT R &mt LCMD S &mt LSHFT T &kp G        &kp M &mt RSHFT N &mt RCMD K &mt RALT L &mt RCTRL QUOT
+            &kp Z       &kp X      &kp C      &kp D       &kp V        &kp K &kp H       &kp COMMA  &kp DOT    &kp FSLH
+                                             &kp SPACE &kp BSPC        &lt EXTENDED ENTER &to SYMBOL 
+            >;
+        };
+
+        symbol {
+            bindings = <
+            &kp EXCL   &kp AT    &kp HASH &kp COLON &kp SEMICOLON        &kp EQUAL &kp N7 &kp N8 &kp N9 &kp PLUS
+            &kp BSLH   &kp PIPE  &kp LPAR &kp LBRC  &kp LBKT             &kp ASTRK &kp N4 &kp N5 &kp N6 &kp MINUS
+            &kp DOLLAR &kp UNDER &kp RPAR &kp RBRC  &kp RBKT             &kp N0    &kp N1 &kp N2 &kp N3 &kp FSLH
+                                    &to DEFAULT &lt FUNCTION BSPC        &kp ENTER &to SYMBOL_ALT
+            >;
+        };
+
+        extended {
+            bindings = <
+            &kp ESC &kp HOME &kp UP   &kp END   &kp PG_UP        &kp PSCRN &kp LA(LEFT)  &kp LG(F) &kp LA(RIGHT) &kp CAPS
+            &kp DEL &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        &kp LG(S) &kp LSHFT     &kp LCMD  &kp LALT      &kp LCTRL
+            &none   &none    &kp TAB  &none     &none            &kp LG(V) &kp LS(LG(K)) &kp LG(C) &kp LG(X)     &kp LG(Z)
+                                       &kp SPACE &kp BSPC        &kp ENTER &trans 
+            >;
+        };
+
+        symbol_alt {
+            bindings = <
+            &none &none &none &none &none        &none &kp AMPS   &kp GRAVE   &kp TILDE &none
+            &none &none &none &none &none        &none &kp DOLLAR &kp PERCENT &kp CARET &kp COLON
+            &none &none &none &none &none        &none &kp EXCL   &kp AT      &kp HASH  &kp COMMA
+                              &none &none        &none &trans 
+            >;
+        };
+
+        function {
+            bindings = <
+            &none     &none    &none    &none      &none        &kp F12 &kp F7 &kp F8 &kp F9 &none
+            &kp LCTRL &kp LALT &kp LCMD &kp LSHIFT &none        &kp F11 &kp F4 &kp F5 &kp F6 &none
+            &none     &none    &none    &none      &none        &kp F10 &kp F1 &kp F2 &kp F3 &none
+                                            &none &trans        &none &none 
+            >;
+        };
+
+        settings {
+            bindings = <
+            &bootloader &none &bt BT_CLR &none &bt BT_SEL 0        &bt BT_SEL 3 &none &none &none &bootloader
+            &none       &none &none      &none &bt BT_SEL 1        &bt BT_SEL 4 &none &none &none &none
+            &none       &none &none      &none &bt BT_SEL 2        &bt BT_SEL 5 &none &none &none &none
+                                          &to DEFAULT &none        &none &none 
+            >;
+        };
+    };
 };
