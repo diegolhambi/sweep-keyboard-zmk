@@ -63,9 +63,9 @@
 
         extended {
             bindings = <
-            &kp ESC &kp HOME &kp UP   &kp END   &kp PG_UP        &kp PSCRN &kp LA(LEFT)  &kp LG(F) &kp LA(RIGHT) &kp CAPS
-            &kp DEL &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        &kp LG(S) &kp LSHFT     &kp LCMD  &kp LALT      &kp LCTRL
-            &none   &none    &kp TAB  &none     &none            &kp LG(V) &kp LS(LG(K)) &kp LG(C) &kp LG(X)     &kp LG(Z)
+            &kp ESC &kp HOME        &kp UP   &kp END     &kp PG_UP        &kp PSCRN &kp LA(LEFT)  &kp LG(F) &kp LA(RIGHT) &kp CAPS
+            &kp DEL &kp LEFT        &kp DOWN &kp RIGHT   &kp PG_DN        &kp LG(S) &kp LSHFT     &kp LCMD  &kp LALT      &kp LCTRL
+            &none   &kp LC(LS(TAB)) &kp TAB  &kp LC(TAB) &none            &kp LG(V) &kp LS(LG(K)) &kp LG(C) &kp LG(X)     &kp LG(Z)
                                        &kp SPACE &kp BSPC        &trans &none 
             >;
         };
