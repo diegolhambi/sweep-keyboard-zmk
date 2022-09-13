@@ -38,8 +38,8 @@
 
         default_layer {
             bindings = <
-            &kp Q       &kp W      &kp F      &kp P       &kp B        &kp J &kp L       &kp I      &kp O      &kp SQT
-            &mt LCTRL A &mt LALT R &mt LCMD S &mt LSHFT T &kp G        &kp M &mt RSHFT N &mt RCMD K &mt RALT L &mt RCTRL QUOT
+            &kp Q       &kp W      &kp F      &kp P       &kp B        &kp J &kp L       &kp U      &kp Y      &kp SQT
+            &mt LCTRL A &mt LALT R &mt LCMD S &mt LSHFT T &kp G        &kp M &mt RSHFT N &mt RCMD E &mt RALT I &mt RCTRL O
             &kp Z       &kp X      &kp C      &kp D       &kp V        &kp K &kp H       &kp COMMA  &kp DOT    &kp FSLH
                                              &kp SPACE &kp BSPC        &lt EXTENDED ENTER &to SYMBOL 
             >;
