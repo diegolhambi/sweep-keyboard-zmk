@@ -97,6 +97,7 @@
             >;
         };
 
+        // https://cdn.discordapp.com/attachments/819487090521407508/1022995004504932402/vivaldi_StKzJztnIE.png
         game_lower {
             bindings = <
             &none &none &none &none &none        &none &none &none &none &none
