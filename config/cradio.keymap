@@ -96,5 +96,32 @@
                                           &to DEFAULT &none        &none &none 
             >;
         };
+
+        game_lower {
+            bindings = <
+            &none &none &none &none &none        &none &none &none &none &none
+            &none &none &none &none &none        &none &none &none &none &none
+            &none &none &none &none &none        &none &none &none &none &none
+                              &none &none        &none &none 
+            >;
+        };
+
+        game {
+            bindings = <
+            &kp T &kp Q &kp W &kp E &kp R        &none &none &none &none &none
+            &kp G &kp A &kp S &kp D &kp F        &none &none &none &none &none
+            &kp H &kp Z &kp X &kp C &kp V        &none &none &none &none &none
+                          &none &kp SPACE        &none &none 
+            >;
+        };
+
+        game_raise {
+            bindings = <
+            &none &none &none &none &none        &none &none &none &none &none
+            &none &none &none &none &none        &none &none &none &none &none
+            &none &none &none &none &none        &none &none &none &none &none
+                              &none &none        &none &none 
+            >;
+        }
     };
 };
