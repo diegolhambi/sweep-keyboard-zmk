@@ -8,20 +8,25 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define MAC_DFT     0
+#define MAC_SYM     1
+#define MAC_EXT     2
+#define MAC_SYM_ALT 3
+#define MAC_FUN     4
 
-#define DEFAULT    0
-#define SYMBOL     1
-#define EXTENDED   2
-#define SYMBOL_ALT 3
-#define FUNCTION   4
-#define SETTINGS   5
+#define WIN_DFT     5
+#define WIN_SYM     6
+#define WIN_EXT     7
+#define WIN_SYM_ALT 8
+#define WIN_FUN     9
+
+#define SETTINGS    10
 
 
 / {
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <180>;
             quick-tap-ms = <0>;
@@ -31,7 +36,6 @@
 
         tdbkt: tap_dance_bkt {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_BKT";
             #binding-cells = <0>;
             tapping-term-ms = <180>;
             bindings = <&kp LBKT>, <&kp RBKT>;
@@ -39,7 +43,6 @@
 
         tdpar: tap_dance_par {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_PAR";
             #binding-cells = <0>;
             tapping-term-ms = <180>;
             bindings = <&kp LPAR>, <&kp RPAR>;
@@ -47,7 +50,6 @@
 
         tdbrc: tap_dance_brc {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_BRC";
             #binding-cells = <0>;
             tapping-term-ms = <180>;
             bindings = <&kp LBRC>, <&kp RBRC>;
@@ -67,25 +69,25 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        mac_default {
             bindings = <
             &kp Q       &kp W      &kp F      &kp P       &kp B        &kp J &kp L       &kp U      &kp Y      &kp SQT
             &hm LCTRL A &hm LALT R &hm LCMD S &hm LSHFT T &kp G        &kp M &hm RSHFT N &hm RCMD E &hm RALT I &hm RCTRL O
             &kp Z       &kp X      &kp C      &kp D       &kp V        &kp K &kp H       &kp COMMA  &kp DOT    &kp FSLH
-                                             &kp SPACE &kp BSPC        &lt EXTENDED ENTER &to SYMBOL 
+                                             &kp SPACE &kp BSPC        &lt MAC_EXT ENTER &to MAC_SYM 
             >;
         };
 
-        symbol {
+        mac_symbol {
             bindings = <
             &kp EXCL   &kp AT    &kp HASH &kp COLON &kp SEMICOLON        &kp EQUAL &kp N7 &kp N8 &kp N9 &kp PLUS
             &kp BSLH   &kp PIPE  &tdbkt   &tdpar    &tdbrc               &kp ASTRK &kp N4 &kp N5 &kp N6 &kp MINUS
             &kp DOLLAR &kp UNDER &kp AMPS &kp TILDE &kp CARET            &kp N0    &kp N1 &kp N2 &kp N3 &kp FSLH
-                                    &to DEFAULT &lt FUNCTION BSPC        &lt EXTENDED ENTER &mo SYMBOL_ALT
+                                    &to MAC_DFT &lt MAC_FUN BSPC        &lt MAC_EXT ENTER &mo MAC_SYM_ALT
             >;
         };
 
-        extended {
+        mac_extended {
             bindings = <
             &kp ESC       &kp HOME        &kp UP   &kp END     &kp PG_UP        &kp PSCRN &kp LA(LEFT)  &kp LG(F) &kp LA(RIGHT) &kp CAPS
             &kp DEL       &kp LEFT        &kp DOWN &kp RIGHT   &kp PG_DN        &kp LG(S) &kp LSHFT     &kp LCMD  &kp LALT      &kp LCTRL
@@ -94,7 +96,7 @@
             >;
         };
 
-        symbol_alt {
+        mac_symbol_alt {
             bindings = <
             &none &none &none &none &none        &none &kp AMPS   &kp GRAVE   &kp TILDE &none
             &none &none &none &none &none        &none &kp DOLLAR &kp PERCENT &kp CARET &kp COMMA
@@ -103,7 +105,52 @@
             >;
         };
 
-        function {
+        mac_function {
+            bindings = <
+            &none     &none    &none    &none      &none        &kp F12 &kp F7 &kp F8 &kp F9 &none
+            &kp LCTRL &kp LALT &kp LCMD &kp LSHIFT &none        &kp F11 &kp F4 &kp F5 &kp F6 &none
+            &none     &none    &none    &none      &none        &kp F10 &kp F1 &kp F2 &kp F3 &none
+                                            &none &trans        &none &none 
+            >;
+        };
+
+        win_default {
+            bindings = <
+            &kp Q       &kp W      &kp F       &kp P       &kp B        &kp J &kp L       &kp U       &kp Y      &kp SQT
+            &hm LCMD A  &hm LALT R &hm LCTRL S &hm LSHFT T &kp G        &kp M &hm RSHFT N &hm RCTRL E &hm RALT I &hm RCMD O
+            &kp Z       &kp X      &kp C       &kp D       &kp V        &kp K &kp H       &kp COMMA   &kp DOT    &kp FSLH
+                                             &kp SPACE &kp BSPC        &lt WIN_EXT ENTER &to WIN_SYM 
+            >;
+        };
+
+        win_symbol {
+            bindings = <
+            &kp EXCL   &kp AT    &kp HASH &kp COLON &kp SEMICOLON        &kp EQUAL &kp N7 &kp N8 &kp N9 &kp PLUS
+            &kp BSLH   &kp PIPE  &tdbkt   &tdpar    &tdbrc               &kp ASTRK &kp N4 &kp N5 &kp N6 &kp MINUS
+            &kp DOLLAR &kp UNDER &kp AMPS &kp TILDE &kp CARET            &kp N0    &kp N1 &kp N2 &kp N3 &kp FSLH
+                                    &to WIN_DFT &lt WIN_FUN BSPC        &lt WIN_EXT ENTER &mo WIN_SYM_ALT
+            >;
+        };
+
+        win_extended {
+            bindings = <
+            &kp ESC       &kp HOME        &kp UP   &kp END     &kp PG_UP        &kp LG(LS(S)) &kp LC(LEFT)  &kp LG(F) &kp LC(RIGHT) &kp CAPS
+            &kp DEL       &kp LEFT        &kp DOWN &kp RIGHT   &kp PG_DN        &kp LC(S)     &kp LSHFT     &kp LCTRL &kp LALT      &kp LCMD
+            &kp LC(GRAVE) &kp LC(LS(TAB)) &kp TAB  &kp LC(TAB) &none            &kp LC(V)     &none         &kp LC(C) &kp LC(X)     &kp LC(Z)
+                                                      &kp SPACE &kp BSPC        &trans &none 
+            >;
+        };
+
+        win_symbol_alt {
+            bindings = <
+            &none &none &none &none &none        &none &kp AMPS   &kp GRAVE   &kp TILDE &none
+            &none &none &none &none &none        &none &kp DOLLAR &kp PERCENT &kp CARET &kp COMMA
+            &none &none &none &none &none        &none &kp EXCL   &kp AT      &kp HASH  &kp DOT
+                              &none &none        &none &trans 
+            >;
+        };
+
+        win_function {
             bindings = <
             &none     &none    &none    &none      &none        &kp F12 &kp F7 &kp F8 &kp F9 &none
             &kp LCTRL &kp LALT &kp LCMD &kp LSHIFT &none        &kp F11 &kp F4 &kp F5 &kp F6 &none
@@ -114,10 +161,10 @@
 
         settings {
             bindings = <
-            &none &none &bt BT_CLR &none &bt BT_SEL 0        &none &none &none &none &none
-            &none &none &none      &none &bt BT_SEL 1        &none &none &none &none &none
-            &none &none &none      &none &bt BT_SEL 2        &none &none &none &none &none
-                                    &to DEFAULT &none        &none &none 
+            &to MAC_DFT &none &bt BT_CLR &none &bt BT_SEL 0        &none &none &none &none &to WIN_DFT
+            &none       &none &none      &none &bt BT_SEL 1        &none &none &none &none &none
+            &none       &none &none      &none &bt BT_SEL 2        &none &none &none &none &none
+                                          &to MAC_DFT &none        &none &none 
             >;
         };
     };
