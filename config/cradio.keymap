@@ -98,10 +98,10 @@
 
         mac_symbol_alt {
             bindings = <
-            &none &none &none &none &none        &none &kp AMPS   &kp GRAVE   &kp TILDE &none
-            &none &none &none &none &none        &none &kp DOLLAR &kp PERCENT &kp CARET &kp COMMA
-            &none &none &none &none &none        &none &kp EXCL   &kp AT      &kp HASH  &kp DOT
-                              &none &none        &none &trans 
+            &none      &kp C_PREV &kp C_PP &kp C_NEXT &kp C_VOL_UP        &none &kp AMPS   &kp GRAVE   &kp TILDE &none
+            &none      &none      &none    &none      &kp C_VOL_DN        &none &kp DOLLAR &kp PERCENT &kp CARET &kp COMMA
+            &kp C_MUTE &none      &none    &none      &none               &none &kp EXCL   &kp AT      &kp HASH  &kp DOT
+                                                  &none &none        &none &trans 
             >;
         };
 
@@ -143,10 +143,10 @@
 
         win_symbol_alt {
             bindings = <
-            &none &none &none &none &none        &none &kp AMPS   &kp GRAVE   &kp TILDE &none
-            &none &none &none &none &none        &none &kp DOLLAR &kp PERCENT &kp CARET &kp COMMA
-            &none &none &none &none &none        &none &kp EXCL   &kp AT      &kp HASH  &kp DOT
-                              &none &none        &none &trans 
+            &none      &kp C_PREV &kp C_PP &kp C_NEXT &kp C_VOL_UP        &none &kp AMPS   &kp GRAVE   &kp TILDE &none
+            &none      &none      &none    &none      &kp C_VOL_DN        &none &kp DOLLAR &kp PERCENT &kp CARET &kp COMMA
+            &kp C_MUTE &none      &none    &none      &none               &none &kp EXCL   &kp AT      &kp HASH  &kp DOT
+                                                       &none &none        &none &trans 
             >;
         };
 
