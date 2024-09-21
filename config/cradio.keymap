@@ -80,9 +80,9 @@ ZMK_COMBO(cut, &kp LC(X), RB1 RB3)
 // mac homerows lctrl lalt lcmd  lshift
 // win homerows lcmd  lalt lctrl lshift
 
-ZMK_LAYER(base,
-    &kp Q &kp W &kp F &kp P &kp B    &kp J &kp L &kp U     &kp Y   &kp SQT
-    &kp A &kp R &kp S &kp T &kp G    &kp M &kp N &kp E     &kp I   &kp O
-    &kp Z &kp X &kp C &kp D &kp V    &kp K &kp H &kp COMMA &kp DOT &kp FSLH
-               &kp SPACE &kp BSPC    &kp ENTER &kp I
+ZMK_LAYER(base_win,
+    &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J &kp L        &kp U        &kp Y       &kp SQT
+    &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHFT T &kp G        &kp M &hmr RSHFT N &hmr LCTRL E &hmr RALT I &hmr RGUI O 
+    &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K &kp H        &kp COMMA    &kp DOT     &kp FSLH
+                                            &kp SPACE &none        &none &none
 )
