@@ -71,9 +71,9 @@ ZMK_COMBO(enter, &kp ENTER, RT1 RT2)
 ZMK_COMBO(tab, &kp TAB, RT2 R3)
 ZMK_COMBO(smart_shift, &smart_shft, RM0 RM1)
 
-ZMK_COMBO(paste, ?, RB1 RB2)
-ZMK_COMBO(copy, ?, RB2 RB3)
-ZMK_COMBO(cut, ?, RB1 RB3)
+ZMK_COMBO(paste, &kp LC(V), RB1 RB2)
+ZMK_COMBO(copy, &kp LC(C), RB2 RB3)
+ZMK_COMBO(cut, &kp LC(X), RB1 RB3)
 
 
 // layout colemak-dh
