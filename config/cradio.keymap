@@ -61,10 +61,10 @@ ZMK_COMBO(amps,  &kp AMPS,  RT1 RM1)
 ZMK_COMBO(astrk, &kp ASTRK, RT2 RM2)
 ZMK_COMBO(plus,  &kp PLUS,  RT3 RM3)
 
-ZMK_COMBO(under, &kp UNDER, LM0 LB0)
-ZMK_COMBO(minus, &kp MINUS, LM1 LB1)
-ZMK_COMBO(slash, &kp FSLH,  LM2 LB2)
-ZMK_COMBO(pipe,  &kp PIPE,  LM3 LB3)
+ZMK_COMBO(under, &kp UNDER, RM0 RB0)
+ZMK_COMBO(minus, &kp MINUS, RM1 RB1)
+ZMK_COMBO(slash, &kp FSLH,  RM2 RB2)
+ZMK_COMBO(pipe,  &kp PIPE,  RM3 RB3)
 
 
 
