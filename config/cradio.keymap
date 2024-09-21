@@ -43,7 +43,7 @@ ZMK_COMBO(enter,     &kp ENTER,  RB0 RB1)
 // layout colemak-dh
 // mac homerows lctrl lalt lcmd  lshift
 // win homerows lcmd  lalt lctrl lshift
-khkhkh
+
 ZMK_LAYER(default_layer,
     &kp Q &kp W &kp F &kp P &kp B    &kp J &kp L &kp U     &kp Y   &kp SQT
     &kp A &kp R &kp S &kp T &kp G    &kp M &kp N &kp E     &kp I   &kp O
