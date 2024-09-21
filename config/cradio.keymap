@@ -68,7 +68,7 @@ ZMK_COMBO(rbrc, &kp RBRC, LB2 LB1)
 
 /* Horizontal combos - right hand */
 ZMK_COMBO(enter, &kp ENTER, RT1 RT2)
-ZMK_COMBO(tab, &kp TAB, RT2 R3)
+ZMK_COMBO(tab, &kp TAB, RT2 RT3)
 ZMK_COMBO(smart_shift, &smart_shft, RM0 RM1)
 
 ZMK_COMBO(paste, &kp LC(V), RB1 RB2)
