@@ -59,7 +59,7 @@ ZMK_COMBO(astrk, &kp ASTRK, RT3 RM3)
 /* Horizontal combos - left hand */
 ZMK_COMBO(esc, &kp ESC, LT4 LT3)
 ZMK_COMBO(a_til, &m_a_til, LM4 LM3)
-ZMK_COMBO(bspc, &kp BSPC, LT2 LT1)
+ZMK_COMBO(enter, &kp ENTER, LT1 LT2)
 
 ZMK_COMBO(lpar, &kp LPAR, LM3 LM2)
 ZMK_COMBO(rpar, &kp RPAR, LM2 LM1)
@@ -67,7 +67,7 @@ ZMK_COMBO(lbrc, &kp LBRC, LB3 LB2)
 ZMK_COMBO(rbrc, &kp RBRC, LB2 LB1)
 
 /* Horizontal combos - right hand */
-ZMK_COMBO(enter, &kp ENTER, RT1 RT2)
+ZMK_COMBO(bspc, &kp BSPC, RT2 RT1)
 ZMK_COMBO(tab, &kp TAB, RT2 RT3)
 ZMK_COMBO(smart_shift, &smart_shft, RM0 RM1)
 
