@@ -42,38 +42,68 @@ ZMK_BEHAVIOR(m_a_til, macro,
     bindings = <&kp TILDE &kp A>;
 )
 
+
+
 /* Vertical combos - left hand */
-ZMK_COMBO(excl, &kp EXCL, LT3 LM3)
-ZMK_COMBO(at, &kp AT, LT2 LM2)
-ZMK_COMBO(hash, &kp HASH, LT1 LM1)
-ZMK_COMBO(dollar, &kp DOLLAR, LT0 LM0)
+ZMK_COMBO(at,      &kp AT,      LT3 LM3)
+ZMK_COMBO(hash,    &kp HASH,    LT2 LM2)
+ZMK_COMBO(dollar,  &kp DOLLAR,  LT1 LM1)
+ZMK_COMBO(percent, &kp PERCENT, LT0 LM0)
+
+ZMK_COMBO(bslh,  &kp BSLH,  LM3 LB3)
+ZMK_COMBO(grave, &kp GRAVE, LM2 LB2)
+ZMK_COMBO(equal, &kp EQUAL, LM1 LB1)
+ZMK_COMBO(tilde, &kp TILDE, LM0 LB0)
 
 /* Vertical combos - right hand */
-ZMK_COMBO(percent, &kp PERCENT, RT0 RM0)
-ZMK_COMBO(caret, &kp CARET, RT1 RM1)
-ZMK_COMBO(amps, &kp AMPS, RT2 RM2)
-ZMK_COMBO(astrk, &kp ASTRK, RT3 RM3)
+ZMK_COMBO(caret, &kp CARET, RT0 RM0)
+ZMK_COMBO(amps,  &kp AMPS,  RT1 RM1)
+ZMK_COMBO(astrk, &kp ASTRK, RT2 RM2)
+ZMK_COMBO(plus,  &kp PLUS,  RT3 RM3)
+
+ZMK_COMBO(under, &kp UNDER, LM0 LB0)
+ZMK_COMBO(minus, &kp MINUS, LM1 LB1)
+ZMK_COMBO(slash, &kp FSLH,  LM2 LB2)
+ZMK_COMBO(pipe,  &kp PIPE,  LM3 LB3)
 
 
 
 /* Horizontal combos - left hand */
-ZMK_COMBO(esc, &kp ESC, LT4 LT3)
-ZMK_COMBO(a_til, &m_a_til, LM4 LM3)
+ZMK_COMBO(esc,   &kp ESC,   LT3 LT4)
+ZMK_COMBO(a_til, &m_a_til,  LM3 LM4)
 ZMK_COMBO(enter, &kp ENTER, LT1 LT2)
 
-ZMK_COMBO(lpar, &kp LPAR, LM3 LM2)
-ZMK_COMBO(rpar, &kp RPAR, LM2 LM1)
-ZMK_COMBO(lbrc, &kp LBRC, LB3 LB2)
-ZMK_COMBO(rbrc, &kp RBRC, LB2 LB1)
+ZMK_COMBO(lpar, &kp LPAR, LM2 LM3)
+ZMK_COMBO(rpar, &kp RPAR, LM1 LM2)
+ZMK_COMBO(lbkt, &kp LBKT, LB2 LB3)
+ZMK_COMBO(rbkt, &kp RBKT, LB1 LB2)
 
 /* Horizontal combos - right hand */
-ZMK_COMBO(bspc, &kp BSPC, RT2 RT1)
-ZMK_COMBO(tab, &kp TAB, RT2 RT3)
+ZMK_COMBO(bspc,        &kp BSPC,    RT1 RT2)
+ZMK_COMBO(tab,         &kp TAB,     RT2 RT3)
 ZMK_COMBO(smart_shift, &smart_shft, RM0 RM1)
 
 ZMK_COMBO(paste, &kp LC(V), RB1 RB2)
-ZMK_COMBO(copy, &kp LC(C), RB2 RB3)
-ZMK_COMBO(cut, &kp LC(X), RB1 RB3)
+ZMK_COMBO(copy,  &kp LC(C), RB2 RB3)
+ZMK_COMBO(cut,   &kp LC(X), RB1 RB3)
+
+
+
+
+ZMK_MOD_MORPH(comma_morph,
+    mods = <MOD_LSFT|MOD_RSFT>;
+    bindings = <&kp COMMA, &kp CTL>;
+)
+
+ZMK_MOD_MORPH(dot_morph,
+    mods = <MOD_LSFT|MOD_RSFT>;
+    bindings = <&kp DOT, &kp COLON>;
+)
+
+ZMK_MOD_MORPH(qst_excl,
+    mods = <MOD_LSFT|MOD_RSFT>;
+    bindings = <&kp QMARK, &kp EXCL>;
+)
 
 
 // layout colemak-dh
@@ -83,6 +113,6 @@ ZMK_COMBO(cut, &kp LC(X), RB1 RB3)
 ZMK_LAYER(base_win,
     &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J &kp L        &kp U        &kp Y       &kp SQT
     &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHFT T &kp G        &kp M &hmr RSHFT N &hmr LCTRL E &hmr RALT I &hmr RGUI O 
-    &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K &kp H        &kp COMMA    &kp DOT     &kp FSLH
+    &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K &kp H        &comma_morph &dot_morph  &qst_excl
                                             &kp SPACE &none        &none &none
 )
