@@ -70,7 +70,6 @@ ZMK_COMBO(pipe,  &kp PIPE,  RM3 RB3)
 
 /* Horizontal combos - left hand */
 ZMK_COMBO(esc,   &kp ESC,   LT3 LT4)
-ZMK_COMBO(a_til, &m_a_til,  LM3 LM4)
 ZMK_COMBO(enter, &kp ENTER, LT1 LT2)
 
 ZMK_COMBO(lpar, &kp LPAR, LM2 LM3)
@@ -81,7 +80,6 @@ ZMK_COMBO(rbkt, &kp RBKT, LB1 LB2)
 /* Horizontal combos - right hand */
 ZMK_COMBO(bspc,        &kp BSPC,    RT1 RT2)
 ZMK_COMBO(tab,         &kp TAB,     RT2 RT3)
-ZMK_COMBO(smart_shift, &smart_shft, RM0 RM1)
 
 ZMK_COMBO(paste, &kp LC(V), RB1 RB2)
 ZMK_COMBO(copy,  &kp LC(C), RB2 RB3)
@@ -114,5 +112,5 @@ ZMK_LAYER(base_win,
     &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J &kp L        &kp U        &kp Y       &kp SQT
     &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHFT T &kp G        &kp M &hmr RSHFT N &hmr LCTRL E &hmr RALT I &hmr RGUI O 
     &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K &kp H        &comma_morph &dot_morph  &qst_excl
-                                            &kp SPACE &none        &none &none
+                                            &kp SPACE &none        &kp ENTER &smart_shft
 )
