@@ -92,7 +92,7 @@ ZMK_COMBO(cut,   &kp LC(X), RB1 RB3)
 
 ZMK_MOD_MORPH(comma_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;
-    bindings = <&kp COMMA>, <&kp CTL>;
+    bindings = <&kp COMMA>, <&kp SEMICOLON>;
 )
 
 ZMK_MOD_MORPH(dot_morph,
