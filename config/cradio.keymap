@@ -121,6 +121,8 @@ ZMK_COMBO(rbkt, &kp RBKT, RB2 RB3)
 #define NUM  4
 #define SYS  5
 
+ZMK_CONDITIONAL_LAYER(sys, FN NAV, SYS)
+
 ZMK_LAYER(base_win,
     &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J &kp L        &kp U        &kp Y       &kp SQT
     &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHFT T &kp G        &kp M &hmr RSHFT N &hmr LCTRL E &hmr RALT I &hmr RGUI O 
