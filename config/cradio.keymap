@@ -115,9 +115,28 @@ ZMK_COMBO(cut,   &kp LC(X), RB1 RB3)
 // mac homerows lctrl lalt lcmd  lshift
 // win homerows lcmd  lalt lctrl lshift
 
+#define BWIN 0
+#define BMAC 1
+#define NAV  2
+
+
 ZMK_LAYER(base_win,
     &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J &kp L        &kp U        &kp Y       &kp SQT
     &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHFT T &kp G        &kp M &hmr RSHFT N &hmr LCTRL E &hmr RALT I &hmr RGUI O 
     &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K &kp H        &comma_morph &dot_morph  &qst_excl
-                                            &kp SPACE &none        &kp ENTER &smart_shft
+                                            &kp SPACE &tog BMAC        &lt NAV ENTER &smart_shft
+)
+
+ZMK_LAYER(base_mac,
+    &trans       &trans      &trans      &trans       &trans        &trans &trans       &trans      &trans      &trans
+    &hml LCTRL A &hml LALT R &hml LCMD S &hml LSHFT T &trans        &trans &hmr RSHFT N &hmr LCMD E &hmr RALT I &hmr RCTRL O 
+    &trans       &trans      &trans      &trans       &trans        &trans &trans       &trans      &trans      &trans
+                                               &trans &trans        &trans &trans
+)
+
+ZMK_LAYER(nav,
+    &trans &trans   &kp UP   &trans    &kp PG_UP        &trans &trans &trans &trans &trans
+    &trans &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        &trans &trans &trans &trans &trans 
+    &trans &trans   &trans   &trans    &trans           &trans &trans &trans &trans &trans
+                                   &trans &trans        &trans &trans
 )
