@@ -37,7 +37,6 @@ draw_config:
   glyph_shifted_size: 10
   glyphs: {}
 parse_config:
-  zmk_additional_includes: ["zmk-helpers/include"]
   preprocess: true
   skip_binding_parsing: false
   raw_binding_map: {}
@@ -198,5 +197,8 @@ parse_config:
     NUHS: '#'
     TILDE2: '~'
   zmk_combos: {}
-  zmk_preamble: '#define KEYMAP_DRAWER'
-  zmk_additional_includes: []
+  zmk_preamble: 
+    - '#define KEYMAP_DRAWER'
+    - '#include <zmk-helpers/key-labels/34.h>'
+  zmk_additional_includes: 
+    - 'zmk-helpers/include'
