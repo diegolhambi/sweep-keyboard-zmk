@@ -75,8 +75,8 @@ ZMK_COMBO(hash,    &kp HASH,    LT2 LM2)
 ZMK_COMBO(dollar,  &kp DOLLAR,  LT1 LM1)
 ZMK_COMBO(percent, &kp PERCENT, LT0 LM0)
 
-ZMK_COMBO(bslh,  &kp BSLH,  LM3 LB3)
-ZMK_COMBO(grave, &kp GRAVE, LM2 LB2)
+ZMK_COMBO(grave, &kp GRAVE, LM3 LB3)
+ZMK_COMBO(bslh,  &kp BSLH,  LM2 LB2)
 ZMK_COMBO(equal, &kp EQUAL, LM1 LB1)
 ZMK_COMBO(tilde, &kp TILDE, LM0 LB0)
 
@@ -94,7 +94,7 @@ ZMK_COMBO(pipe,  &kp PIPE,  RM3 RB3)
 
 
 /* Horizontal combos - left hand */
-ZMK_COMBO(esc,   &kp ESC,   LT3 LT4)
+ZMK_COMBO(esc,   &kp ESC,   LT2 LT3)
 ZMK_COMBO(enter, &kp ENTER, LT1 LT2)
 
 ZMK_COMBO(tab,  &kp TAB,  LM1 LM2)
