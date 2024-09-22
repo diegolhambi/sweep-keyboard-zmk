@@ -97,36 +97,35 @@ ZMK_COMBO(pipe,  &kp PIPE,  RM3 RB3)
 ZMK_COMBO(esc,   &kp ESC,   LT3 LT4)
 ZMK_COMBO(enter, &kp ENTER, LT1 LT2)
 
-ZMK_COMBO(lpar, &lpar_lt, LM2 LM3)
-ZMK_COMBO(rpar, &rpar_gt, LM1 LM2)
-ZMK_COMBO(lbkt, &kp LBKT, LB2 LB3)
-ZMK_COMBO(rbkt, &kp RBKT, LB1 LB2)
+ZMK_COMBO(tab,  &kp TAB,  LM1 LM2)
+
+ZMK_COMBO(paste, &kp LC(V), LB1 LB2)
+ZMK_COMBO(copy,  &kp LC(C), LB2 LB3)
+ZMK_COMBO(cut,   &kp LC(X), LB1 LB3)
+
 
 /* Horizontal combos - right hand */
 ZMK_COMBO(bspc, &kp BSPC, RT1 RT2)
-ZMK_COMBO(tab,  &kp TAB,  RT2 RT3)
 
-ZMK_COMBO(paste, &kp LC(V), RB1 RB2)
-ZMK_COMBO(copy,  &kp LC(C), RB2 RB3)
-ZMK_COMBO(cut,   &kp LC(X), RB1 RB3)
+ZMK_COMBO(lpar, &lpar_lt, RM1 RM2)
+ZMK_COMBO(rpar, &rpar_gt, RM2 RM3)
 
 
-
-// layout colemak-dh
-// mac homerows lctrl lalt lcmd  lshift
-// win homerows lcmd  lalt lctrl lshift
+ZMK_COMBO(lbkt, &kp LBKT, RB1 RB2)
+ZMK_COMBO(rbkt, &kp RBKT, RB2 RB3)
 
 #define BWIN 0
 #define BMAC 1
 #define NAV  2
-#define NUM  3
-
+#define FN   3
+#define NUM  4
+#define SYS  5
 
 ZMK_LAYER(base_win,
     &kp Q       &kp W       &kp F        &kp P        &kp B        &kp J &kp L        &kp U        &kp Y       &kp SQT
     &hml LGUI A &hml LALT R &hml LCTRL S &hml LSHFT T &kp G        &kp M &hmr RSHFT N &hmr LCTRL E &hmr RALT I &hmr RGUI O 
     &kp Z       &kp X       &kp C        &kp D        &kp V        &kp K &kp H        &comma_morph &dot_morph  &qst_excl
-                                    &kp SPACE &num_word NUM        &lt NAV ENTER &smart_shft
+                                 &lt FN SPACE &num_word NUM        &lt NAV ENTER &smart_shft
 )
 
 ZMK_LAYER(base_mac,
@@ -143,9 +142,23 @@ ZMK_LAYER(nav,
                                    &trans &trans        &trans &trans
 )
 
+ZMK_LAYER(fn,
+    &trans &trans &trans &trans &trans        &kp F12 &kp F7 &kp F8 &kp F9 &trans
+    &trans &trans &trans &trans &trans        &kp F11 &kp F4 &kp F5 &kp F6 &trans 
+    &trans &trans &trans &trans &trans        &kp F10 &kp F1 &kp F2 &kp F3 &trans
+                         &trans &trans        &kp C_MUTE &kp C_PP
+)
+
 ZMK_LAYER(num,
     &trans &trans &trans &trans &trans        &trans &kp N7 &kp N8 &kp N9 &trans
     &trans &trans &trans &trans &trans        &trans &kp N4 &kp N5 &kp N6 &dot_morph 
     &trans &trans &trans &trans &trans        &kp N0 &kp N1 &kp N2 &kp N3 &comma_morph
                          &trans &trans        &trans &trans
+)
+
+ZMK_LAYER(sys,
+    &none &none &bt BT_CLR &none &bt BT_SEL 0        &tog BMAC &none &none &none &none
+    &none &none &none      &none &bt BT_SEL 1        &none     &none &none &none &none 
+    &none &none &none      &none &bt BT_SEL 2        &none     &none &none &none &none
+                                &trans &trans        &trans    &trans
 )
