@@ -140,7 +140,7 @@ ZMK_LAYER(base_win,
 ZMK_LAYER(base_mac,
     &trans       &trans      &trans      &trans       &trans        &trans &trans       &trans      &trans      &trans
     &hml LCTRL A &hml LALT R &hml LCMD S &hml LSHFT T &trans        &trans &hmr RSHFT N &hmr LCMD E &hmr RALT I &hmr RCTRL O 
-    &trans       &trans      &trans      &trans       &trans        &trans &trans       &trans      &trans      &trans
+    &trans       &kp X       &kp C        &kp D       &trans        &trans &trans       &trans      &trans      &trans
                                                &trans &trans        &trans &trans
 )
 
