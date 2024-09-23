@@ -138,9 +138,9 @@ ZMK_LAYER(base_mac,
 )
 
 ZMK_LAYER(nav,
-    &trans &trans   &kp UP   &trans    &kp PG_UP        &trans &trans &trans &trans &trans
-    &trans &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        &trans &trans &trans &trans &trans 
-    &trans &trans   &trans   &trans    &trans           &trans &trans &trans &trans &trans
+    &trans &trans   &kp UP   &trans    &kp PG_UP        &kp PSCRN &trans &trans &trans &trans
+    &trans &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN        &trans    &trans &trans &trans &trans 
+    &trans &trans   &trans   &trans    &trans           &trans    &trans &trans &trans &trans
                                    &trans &trans        &trans &trans
 )
 
