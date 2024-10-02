@@ -134,7 +134,10 @@ ZMK_COMBO(w_undo, &kp LC(Z), RB3 RB4, BWIN, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(m_undo, &kp LG(Z), RB3 RB4, BMAC, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Horizontal combos - both hands */
-ZMK_COMBO(sys, &tog SYS, LB4 RB4, BWIN BMAC SYS, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(sys, &tog SYS, LB4 RB4, BWIN BMAC SYS, 50, 150)
+
+ZMK_COMBO(bt_clear, &bt BT_CLR, LT1 LT2, SYS, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(bt_clear_all, &bt BT_CLR_ALL, LT1 LT3, SYS, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 
 ZMK_LAYER(base_win,
@@ -173,8 +176,8 @@ ZMK_LAYER(num,
 )
 
 ZMK_LAYER(sys,
-    &none &none &bt BT_CLR &none &bt BT_SEL 0        &tog BMAC &none &none &none &none
-    &none &none &none      &none &bt BT_SEL 1        &none     &none &none &none &none 
-    &none &none &none      &none &bt BT_SEL 2        &none     &none &none &none &none
-                                &trans &trans        &trans    &trans
+    &none &none &none &none &bt BT_SEL 0        &tog BMAC &none &none &none &none
+    &none &none &none &none &bt BT_SEL 1        &none     &none &none &none &none 
+    &none &none &none &none &bt BT_SEL 2        &none     &none &none &none &none
+                           &trans &trans        &trans    &trans
 )
